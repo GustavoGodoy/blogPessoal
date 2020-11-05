@@ -1,31 +1,25 @@
-<body style="background: #E8CBC0; 
-background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0); 
-background: linear-gradient(to right, #636FA4, #E8CBC0);">
-    
-
 <div class="container">
-    <div class="row shadow" style="margin-top:10%; margin-bottom:10%; padding: 10% 3% 10% 3%; background-color: white;">
-        <div class="col-md-4 d-flex align-items-center rounded">
-            <h1 class="display-4 text-right pr-5">Seja bem vindo!</h1>
-        </div>
-        <div class="col-md-8">
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Digite o seu e-mail!</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted">Nunca compartilhe informações pessoais.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Senha</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-success">Submit</button>
-              </form>
-        </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-md-12">
+      <h1 class="text-center display-2">Login</h1>
     </div>
+  </div>
+  <div class="row mb-5 d-flex justify-content-center pt-5 pb-5 mb-5">
+    <div class="col-md-6">
+      <div>
+        <div class="form-group">
+          <label for="usuario">Endereço de Email</label>
+          <input type="text" class="form-control" id="usuario" placeholder="Seu Email" [(ngModel)]='userLogin.usuario'>
+          <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Senha</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" [(ngModel)]='userLogin.senha'>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-outline-success w-25 mt-3" (click)='entrar()'>Entrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</body>

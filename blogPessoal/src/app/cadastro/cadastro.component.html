@@ -1,35 +1,32 @@
-<body style="background: #E8CBC0; 
-background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0); 
-background: linear-gradient(to right, #636FA4, #E8CBC0);">
-    
-<div class="container d-flex align-content-center justify-content-center shadow" style="background-color: white; margin-top: 4%;">
-    <div class="row mb-3 mt-3">
-        <div class="col-md-12 "><h1 class="display-3">CADASTRO</h1></div>
-    </div>
-</div>
 <div class="container">
-    <div class="row shadow mt-1" style="margin-bottom:10%; padding: 10% 3% 10% 3%; background-color: white;">
-        <div class="col-md-12">
-            <form>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" placeholder="Digite seu nome aqui!" id="nome" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="email">Digite o seu e-mail!</label>
-                  <input type="email" class="form-control" id="email" placeholder="ex. nome@exemplo.com">
-                </div>
-                <div class="form-group">
-                  <label for="senha">Senha</label>
-                  <input type="password" class="form-control" id="senha" placeholder="Digite uma senha segura!">
-                </div>
-                <div class="form-group">
-                    <label for="senhaConf">Confirmar senha</label>
-                <input type="password" class="form-control" id="senhaConf" placeholder="Confirme a sua senha.">
-                </div>
-                <button type="submit" class="btn btn-outline-success">Submit</button>
-              </form>
-        </div>
+    <div class="row mt-5 mb-5">
+      <div class="col-md-12">
+        <h1 class="text-center">Cadastrar</h1>
+      </div>
     </div>
-</div>
-</body>
+    <div class="row mb-5 d-flex justify-content-center">
+      <div class="col-md-8">
+        <div>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome aqui" [(ngModel)]='user.nome' >
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" [(ngModel)]='user.usuario'>
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" [(ngModel)]='user.senha'>
+          </div>
+          <div class="form-group">
+            <label for="senhaConf">Confirmar Senha</label>
+            <input type="password" class="form-control" id="senhaConf" placeholder="Digite a confirmação de senha" (input)='conferirSenha($event)' value='{{senha}}' >
+          </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-success w-25" (click)='cadastrar()'>Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
